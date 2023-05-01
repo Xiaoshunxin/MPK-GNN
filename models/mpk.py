@@ -39,7 +39,7 @@ class MPK(nn.Module):
             x_in: the input feature matrix with shape [batch_size, num_genes, num_omics]
             L: the adjacency matrix with shape [num_genes, num_genes]
         """
-        x = x_in  # the input of the ChebNet
+        x = x_in  # the input of the feature-level learning module
         x_nn = x_in.view(x_in.size()[0], -1)  # Input of the SLM module with [batch_size, num_genes * num_omics]
 
         # Process of Sample-based learning module (slm)
